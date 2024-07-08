@@ -2,12 +2,15 @@ package com.example.Tracker_logistics.controller;
 
 
 import com.example.Tracker_logistics.DTOS.UserDTO;
+import com.example.Tracker_logistics.domain.product.Product;
 import com.example.Tracker_logistics.domain.user.User;
 import com.example.Tracker_logistics.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/create/user")
@@ -31,8 +34,17 @@ public class UserController {
     @GetMapping
     public ResponseEntity<?>createPing(@RequestBody User user){
 
-
         return ResponseEntity.ok("Ok");
+
+    }
+
+    @GetMapping("/user/{id}/products")
+    public ResponseEntity<List<Product>>listProductByUser(@PathVariable Long id){
+
+        List<Product> products = userService.getProductsByUser(id);
+        return ResponseEntity.ok(products);
+
+
     }
 
 

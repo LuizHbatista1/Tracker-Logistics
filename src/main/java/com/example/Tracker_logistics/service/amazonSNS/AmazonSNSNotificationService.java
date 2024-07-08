@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AmazonSNSNotificationService {
 
-    @Autowired
+
     private AmazonSNS amazonSNS;
 
 

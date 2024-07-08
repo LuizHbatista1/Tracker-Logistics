@@ -12,6 +12,4 @@ public class TrackerLogisticsApplication {
 
 }
 
-//		"username":"Luiz",
-//    "phone": "123-456-7890",
-//    "email": "john.doe@example.com"
+
