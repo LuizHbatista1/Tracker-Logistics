@@ -19,7 +19,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     private String title;
+    @Enumerated
     private TrackerBase origin;
+    @Enumerated
     private StatusType status;
     @JoinColumn(name = "receiver_id")
     @ManyToOne
